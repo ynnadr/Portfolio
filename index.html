@@ -26,8 +26,14 @@
             background:rgba(255,255,255,0.95); backdrop-filter:blur(10px);
             box-shadow:0 2px 20px rgba(0,0,0,0.1);
         }
-        .nav-content { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 0; }
-        .logo { font-size:1.8rem; font-weight:700; color:var(--primary); }
+        .nav-content {
+            display:flex; justify-content:space-between; align-items:center; padding:1.2rem 0;
+            position:relative;
+        }
+        .logo {
+            font-size:1.8rem; font-weight:700; color:var(--primary);
+            position:absolute; left:50%; transform:translateX(-50%);
+        }
         .nav-links { display:none; gap:1.8rem; align-items:center; flex-wrap:wrap; }
         .nav-links a { font-weight:500; color:var(--dark); position:relative; }
         .nav-links a::after { content:''; position:absolute; bottom:0; left:50%; width:0; height:2px; background:var(--primary); transition:0.3s; transform:translateX(-50%); }
@@ -73,6 +79,7 @@
         @media (min-width:768px) {
             .nav-links { display:flex; }
             .menu-toggle { display:none; }
+            .logo { position:static; transform:none; }
             .hero-content h1 { font-size:4rem; }
         }
         .nav-links.show { display:flex; flex-direction:column; background:white; position:absolute; top:100%; left:0; right:0; padding:1.5rem; box-shadow:0 10px 20px rgba(0,0,0,0.1); }
@@ -146,7 +153,7 @@
         </div>
     </section>
 
-    <!-- FULL-STACK DEVELOPMENT (dengan Vibe Coding) -->
+    <!-- FULL-STACK DEVELOPMENT -->
     <section id="development">
         <div class="container">
             <h2 data-key="dev_title">Full-Stack Development<br><small>Active & Real Results 2025</small></h2>
@@ -168,7 +175,7 @@
                         <li>WordPress Custom Theme & Plugin</li>
                         <li>MySQL, PostgreSQL</li>
                         <li>Payment Gateway: QRIS, Xendit</li>
-                        <li><strong>Vibe Coding</strong> – Latest 2025 development workflow (rapid prototyping, clean architecture, AI-assisted coding)</li>
+                        <li><strong>Vibe Coding</strong> – Latest 2025 workflow (rapid, clean, AI-assisted)</li>
                         <li>Server Migration & Security Hardening</li>
                     </ul>
                 </div>
@@ -184,12 +191,12 @@
         </div>
     </section>
 
-    <!-- LEADERSHIP -->
+    <!-- LEADERSHIP (sudah diperbaiki typo class) -->
     <section id="leadership">
         <div class="container">
             <h2 data-key="lead_title">Leadership & Operational Excellence<br><small>COO • IT Manager • Team Leader</small></h2>
             <div class="grid">
-                <div class="card=">
+                <div class="card">
                     <h3 data-key="lead_pos">Executive Positions</h3>
                     <ul>
                         <li>Chief Operating Officer – PT Jaganti Nusantara Travel</li>
@@ -315,17 +322,29 @@
             item.addEventListener('click', e => {
                 e.preventDefault();
                 const targetId = item.getAttribute('data-section');
+
+                // Update active menu
                 navItems.forEach(i => i.classList.remove('active'));
                 item.classList.add('active');
+
+                // Show section
                 sections.forEach(sec => sec.classList.remove('active'));
                 document.getElementById(targetId).classList.add('active');
-                window.scrollTo({ top: document.getElementById(targetId).offsetTop - 80, behavior: 'smooth' });
+
+                // Smooth scroll
+                window.scrollTo({
+                    top: document.getElementById(targetId).offsetTop - 80,
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu
                 navLinks.classList.remove('show');
             });
         });
 
         menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
 
+        // Language switch
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const lang = btn.dataset.lang;
