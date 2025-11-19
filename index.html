@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R Danny Ramadhan | Senior IT Portfolio 2025</title>
-    <meta name="description" content="Senior IT Project Manager, ISO27001 Consultant, Full-Stack Developer with 28+ years experience">
+    <title>R Danny Ramadhan | Senior IT Professional 2025</title>
+    <meta name="description" content="Senior Project Manager, Full-Stack Developer, Leader & ISO27001 Expert dengan 28+ tahun pengalaman">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -16,8 +16,8 @@
             --gray: #6b7280;
         }
         * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: 'Inter', sans-serif; line-height:1.6; color:#333; background:var(--light); }
-        a { text-decoration:none; color:var(--primary); }
+        body { font-family: 'Inter', sans-serif; line-height:1.7; color:#333; background:var(--light); }
+        a { text-decoration:none; }
         .container { max-width:1400px; margin:0 auto; padding:0 1.5rem; }
 
         /* Navigation */
@@ -26,71 +26,56 @@
             background:rgba(255,255,255,0.95); backdrop-filter:blur(10px);
             box-shadow:0 2px 20px rgba(0,0,0,0.1);
         }
-        .nav-content { display:flex; justify-content:space-between; align-items:center; padding:1rem 0; }
-        .logo { font-size:1.5rem; font-weight:700; color:var(--primary); }
-        .nav-links { display:none; gap:2rem; align-items:center; }
-        .nav-links a { font-weight:500; color:var(--dark); transition:0.3s; }
+        .nav-content { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 0; }
+        .logo { font-size:1.6rem; font-weight:700; color:var(--primary); }
+        .nav-links { display:none; gap:1.8rem; align-items:center; flex-wrap:wrap; }
+        .nav-links a { font-weight:500; color:var(--dark); padding:0.5rem 0; }
         .nav-links a:hover { color:var(--primary); }
-        .lang-switch { display:flex; gap:0.5rem; background:#f1f5f9; padding:0.4rem 0.8rem; border-radius:50px; font-size:0.9rem; }
-        .lang-btn { cursor:pointer; padding:0.3rem 0.6rem; border-radius:50px; transition:0.3s; }
-        .lang-btn.active { background:var(--primary); color:white; }
-        .menu-toggle { font-size:1.5rem; cursor:pointer; color:var(--dark); }
+        .menu-toggle { font-size:1.6rem; cursor:pointer; color:var(--dark); }
 
         /* Hero */
         #hero {
-            height:100vh; min-height:600px;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero.jgp') center/cover no-repeat;
-            display:flex; align-items:center; color:white; text-align:center; position:relative;
+            height:100vh; min-height:620px;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('images/heroj.gp') center/cover no-repeat;
+            display:flex; align-items:center; color:white; text-align:center;
         }
-        
         .profile-img {
-            width:180px; height:180px; border-radius:50%; border:6px solid white; margin-bottom:1.5rem;
-            object-fit:cover; box-shadow:0 10px 30px rgba(0,0,0,0.4);
+            width:160px; height:160px; border-radius:50%; border:6px solid white; margin-bottom:1.5rem;
+            object-fit:cover; box-shadow:0 10px 30px rgba(0,0,0,0.5);
         }
-        .hero-content h1 { font-size:3rem; margin-bottom:1rem; }
-        .hero-content p { font-size:1.3rem; max-width:800px; margin:0 auto 2rem; }
-        .btn { display:inline-block; padding:1rem 2rem; background:var(--primary); color:white; border-radius:50px; font-weight:600; transition:0.3s; }
-        .btn:hover { background:var(--primary-light); transform:translateY(-3px); }
+        .hero-content h1 { font-size:2.8rem; margin-bottom:0.8 Ra; }
+        .hero-content p { font-size:1.25rem; max-width:800px; margin:0 auto 1.5rem; }
+        .btn { display:inline-block; padding:1rem 2.2rem; background:var(--primary); color:white; border-radius:50px; font-weight:600; }
+        .btn:hover { background:var(--primary-light); }
 
-        section { padding:5rem 0; }
-        h2 { font-size:2.5rem; text-align:center; margin-bottom:3rem; color:var(--dark); }
-        .skills-grid, .projects-grid { display:grid; gap:2rem; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); }
-        .card { background:white; padding:2rem; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.1); transition:0.3s; }
-        .card:hover { transform:translateY(-10px); }
-
-        /* Projects Section - teks jelas di background gelap */
-        #projects { 
-            background: linear-gradient(rgba(30,64,175,0.92), rgba(30,64,175,0.92)), 
-                        url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover fixed;
-            color:white;
+        /* Sections */
+        section { padding:6rem 0; display:none; }
+        section.active { display:block; }
+        h2 { font-size:2.4rem; text-align:center; margin-bottom:3rem; color:var(--dark); }
+        .grid { display:grid; gap:2rem; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); }
+        .card {
+            background:white; padding:2rem; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.08);
+            transition:0.3s; border-left:5px solid var(--primary);
         }
-        #projects h2, #projects .card { color:white; }
-        #projects .card { background:rgba(255,255,255,0.1); backdrop-filter:blur(10px); }
+        .card:hover { transform:translateY(-8px); box-shadow:0 20px 40px rgba(0,0,0,0.12); }
+        .card h3 { color:var(--primary); margin-bottom:1rem; font-size:1.4rem; }
+        ul { padding-left:1.5rem; }
+        li { margin-bottom:0.8rem; }
 
-        /* Accordion Experience */
-        .accordion-item { border-bottom:1px solid #e5e7eb; }
-        .accordion-header {
-            width:100%; text-align:left; padding:1.5rem 0; background:none; border:none;
-            font-size:1.2rem; font-weight:600; cursor:pointer; display:flex; justify-content:space-between; align-items:center;
-        }
-        .accordion-header::after { content:'+'; font-size:1.5rem; }
-        .accordion-header.active::after { content:'−'; }
-        .accordion-content {
-            max-height:0; overflow:hidden; transition:max-height 0.4s ease;
-            padding:0 1rem; background:#f9fafb;
-        }
-        .accordion-content.open { max-height:500px; padding:1.5rem 1rem; }
+        #general { background:#f8fafc; }
+        #contact { background:var(--dark); color:white; text-align:center; padding:5rem 0; }
 
-        #about, #experience { background:var(--light); }
-        #contact { background:var(--dark); color:white; text-align:center; }
-        footer { padding:2rem; text-align:center; background:var(--dark); color:#9ca3af; }
+        footer { padding:2rem; text-align:center; background:var(--dark); color:#9ca3af; font-size:0.9rem; }
 
         @media (min-width:768px) {
             .nav-links { display:flex; }
             .menu-toggle { display:none; }
-            .hero-content h1 { font-size:4.5rem; }
+            .hero-content h1 { font-size:4rem; }
         }
-        .nav-links.show { display:flex; flex-direction:column; background:white; position:absolute; top:100%; left:0; right:0; padding:1rem; box-shadow:0 10px 20px rgba(0,0,0,0.1); }
+        .nav-links.show {
+            display:flex; flex-direction:column; background:white; position:absolute; top:100%; left:0; right:0;
+            padding:1.5rem; box-shadow:0 10px 20px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
@@ -98,190 +83,228 @@
     <nav>
         <div class="container nav-content">
             <div class="logo">R Danny Ramadhan</div>
-            <div class="nav-links">
-                <a href="#hero" data-key="nav_home">Home</a>
-                <a href="#about" data-key="nav_about">About</a>
-                <a href="#skills" data-key="nav_skills">Skills</a>
-                <a href="#projects" data-key="nav_projects">Projects</a>
-                <a href="#experience" data-key="nav_experience">Experience</a>
-                <a href="#contact" data-key="nav_contact">Contact</a>
-                <div class="lang-switch">
-                    <span class="lang-bt active" data-lang="en">EN</span>
-                    <span class="lang-btn" data-lang="id">ID</span>
-                </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#hero" class="nav-item active" data-section="hero">Home</a>
+                <a href="#project-management" class="nav-item" data-section="project-management">Senior Project Management</a>
+                <a href="#development" class="nav-item" data-section="development">Full-Stack Development</a>
+                <a href="#leadership" class="nav-item" data-section="leadership">Leadership & Management</a>
+                <a href="#general" class="nav-item" data-section="general">General Competencies</a>
+                <a href="#contact" class="nav-item" data-section="contact">Contact</a>
             </div>
-            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
         </div>
     </nav>
 
-    <section id="hero">
-        <div class="container hero-content">
+    <!-- HERO -->
+    <section id="hero" class="active">
+        <div class="container" style="text-align:center;">
             <img src="images/danny.jpg" alt="R Danny Ramadhan" class="profile-img">
-            <h1 data-key="hero_name">R Danny Ramadhan</h1>
-            <p data-key="hero_title">Senior IT Project Manager • ISO27001 Consultant • Full-Stack Developer</p>
-            <p data-key="hero_desc">28+ years building secure, scalable digital solutions across Indonesia</p>
-            <a href="#contact" class="btn" data-key="hero_btn">Contact Me</a>
+            <h1>R Danny Ramadhan</h1>
+            <p style="font-size:1.4rem; font-weight:600;">Senior IT Professional dengan 28+ Tahun Pengalaman</p>
+            <p>Project Manager • Full-Stack Developer • Leader • ISO27001 Expert</p>
+            <br>
+            <a href="#contact" class="btn">Hubungi Saya Sekarang</a>
         </div>
     </section>
 
-    <section id="about">
+    <!-- 1. SENIOR PROJECT MANAGEMENT -->
+    <section id="project-management">
         <div class="container">
-            <h2 data-key="about_title">About Me</h2>
-            <p style="text-align:center; max-width:900px; margin:0 auto; font-size:1.1rem;" data-key="about_text">
-                Seasoned IT professional with over 28 years of experience in Project Management, ISO27001 implementation, full-stack development, and leadership. Active mentor for Gerakan Nasional 1000 Startup & Google Startup Weekend.
-            </p>
-        </div>
-    </section>
-
-    <section id="skills">
-        <div class="container">
-            <h2 data-key="skills_title">Core Competencies</h2>
-            <div class="skills-grid">
-                <div class="card"><h3>Project Management</h3><p>Agile, Waterfall, MS Project, Scrum</p></div>
-                <div class="card"><h3>Information Security</h3><p>ISO27001 Lead Implementer, Risk Assessment</p></div>
-                <div class="card"><h3>Development</h3><p>PHP, JavaScript, WordPress, Payment Gateway</p></div>
-                <div class="card"><h3>Infrastructure</h3><p>Server Migration, Data Center, Security</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="container">
-            <h2 data-key="projects_title">Recent Projects (2025)</h2>
-            <div class="projects-grid">
+            <h2>Senior Project Management<br><small>20+ Proyek Berskala Besar & Kompleks</small></h2>
+            <div class="grid">
                 <div class="card">
-                    <h3>bfswedding.com</h3>
-                    <p data-key="proj_bfs">Server migration → VPS, security hardening, Xendit Payment Gateway reactivation → 100% uptime</p>
-                    <a href="https://bfswedding.com" target="_blank" style="color:#a5b4fc;">Visit Site →</a>
+                    <h3>Proyek Ikonik</h3>
+                    <ul>
+                        <li>SAP ERP Implementation – Semen Bosowa Group (Transportation + FI-CO)</li>
+                        <li>Data Center Baru & Migrasi Zero-Downtime – KPK (2015)</li>
+                        <li>Platform Digital Nasional – Kementerian Perhubungan & PU</li>
+                        <li>Sistem Kejuaraan Atletik Nasional PAMI (2023–2024)</li>
+                        <li>ISO27001 Bank Sumsel Babel – Sertifikasi dalam 4 bulan</li>
+                    </ul>
                 </div>
                 <div class="card">
-                    <h3>wresni.id</h3>
-                    <p data-key="proj_wresni">Luxury Bali real estate website (WordPress): villa & land listings, inquiry forms, SEO optimized</p>
-                    <a href="https://wresni.id" target="_blank" style="color:#a5b4fc;">Visit Site →</a>
+                    <h3>Metodologi & Tools</h3>
+                    <ul>
+                        <li>Agile + Waterfall (hybrid expert)</li>
+                        <li>Microsoft Project, Jira, Trello</li>
+                        <li>Budget & resource planning hingga ratusan juta</li>
+                        <li>Stakeholder management lintas direksi & kementerian</li>
+                    </ul>
                 </div>
                 <div class="card">
-                    <h3>Tesola Certification Platform</h3>
-                    <p data-key="proj_tesola">Full web app with registration, assessment, auto-certificate, Midtrans payment</p>
+                    <h3>Industri yang Pernah Ditangani</h3>
+                    <ul>
+                        <li>Perbankan & Fintech</li>
+                        <li>Pemerintahan & BUMN</li>
+                        <li>Konstruksi Nasional (ASPEKINDO)</li>
+                        <li>Travel & Real Estate</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience">
+    <!-- 2. FULL-STACK DEVELOPMENT (Aktif 2025) -->
+    <section id="development">
         <div class="container">
-            <h2 data-key="exp_title">Full Professional Experience</h2>
-            <div class="accordion">
-                <div class="accordion-item">
-                    <button class="accordion-header active">2023–Present · Freelance Full-Stack Developer & IT Consultant</button>
-                    <div class="accordion-content open">
-                        bfswedding.com (2025), wresni.id (2025), Tesola Indonesia (2024–2025), PAMI National Athletics System (2023–2024)
-                    </div>
+            <h2>Full-Stack Development<br><small>Aktif & Hasil Nyata 2025</small></h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Proyek Terbaru 2025</h3>
+                    <ul>
+                        <li><strong>bfswedding.com</strong> – Migrasi VPS + aktivasi Xendit Payment Gateway</li>
+                        <li><strong>wresni.id</strong> – Website real estate Bali premium (listing villa/tanah + inquiry)</li>
+                        <li><strong>Tesola Indonesia</strong> – Platform sertifikasi soft-skills lengkap + Midtrans</li>
+                    </ul>
                 </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">2019–2022 · IT Manager – ASPEKINDO</button>
-                    <div class="accordion-content">Strategic IT planning & new certification system → 40% efficiency gain</div>
+                <div class="card">
+                    <h3>Tumpukan Teknologi</h3>
+                    <ul>
+                        <li>PHP Native, JavaScript, HTML5/CSS3</li>
+                        <li>WordPress Custom Theme & Plugin</li>
+                        <li>MySQL, PostgreSQL, MongoDB</li>
+                        <li>Payment Gateway: Xendit, Midtrans</li>
+                        <li>Server: VPS, Shared → VPS migration, Security Hardening</li>
+                    </ul>
                 </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">2018 · ISO27001 Consultant – Bank Sumsel Babel</button>
-                    <div class="accordion-content">Full implementation → certified in 4 months</div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">2016–2017 · COO – PT Jaganti Nusantara Travel</button>
-                    <div class="accordion-content">Full operational responsibility including IT & finance</div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">2015 · Data Center Supervision Consultant – KPK</button>
-                    <div class="accordion-content">Tier-3 data center build & zero-downtime migration</div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">2008–2013 · IT QA & Change Management Lead – Telkom Sigma</button>
-                    <div class="accordion-content">Reduced release defects by 65%</div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">1996–2007 · Various IT Manager / Project Manager Roles</button>
-                    <div class="accordion-content">Bank Danamon, Semen Bosowa (SAP ERP), regional governments, etc.</div>
+                <div class="card">
+                    <h3>Spesialisasi</h3>
+                    <ul>
+                        <li>Real Estate & Wedding Website (Bali market)</li>
+                        <li>Platform e-Learning & Sertifikasi</li>
+                        <li>Custom business application dari nol</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- 3. LEADERSHIP -->
+    <section id="leadership">
+        <div class="container">
+            <h2>Leadership & Operational Excellence<br><small>COO • IT Manager • Team Leader</small></h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Posisi Eksekutif</h3>
+                    <ul>
+                        <li>Chief Operating Officer – PT Jaganti Nusantara Travel (2016–2017)</li>
+                        <li>IT Manager – ASPEKINDO (2019–2022)</li>
+                        <li>IT Manager – Pemerintah Daerah & perusahaan swasta (1996–2004)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Pencapaian Leadership</h3>
+                    <ul>
+                        <li>Menaikkan efisiensi operasional tim IT hingga 40%</li>
+                        <li>Memimpin tim lintas fungsi (developer, QA, infrastructure)</li>
+                        <li>Mentor Gerakan Nasional 1000 Startup (Kominfo) & Google Startup Weekend</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Gaya Kepemimpinan</h3>
+                    <ul>
+                        <li>Hands-on technical leader</li>
+                        <li>Fokus hasil & people development</li>
+                        <li>Pernah kelola P&L perusahaan travel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. GENERAL COMPETENCIES -->
+    <section id="general">
+        <div class="container">
+            <h2>Kompetensi Umum & Pendukung</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Information Security</h3>
+                    <ul>
+                        <li>ISO27001 Lead Implementer (7+ proyek sukses)</li>
+                        <li>Risk Assessment, Gap Analysis, Internal Audit</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Quality Assurance</h3>
+                    <ul>
+                        <li>Head of QA & Change Management – Telkom Sigma (2008–2013)</li>
+                        <li>Kurangi defect release hingga 65%</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Infrastructure</h3>
+                    <ul>
+                        <li>Data Center Supervision (KPK)</li>
+                        <li>IP-VSAT, Server Migration, Security Hardening</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Communication & Presentation (C-level)</li>
+                        <li>Problem Solving & Analytical Thinking</li>
+                        <li>Mentoring & Knowledge Transfer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact">
         <div class="container">
-            <h2 data-key="contact_title">Contact Me</h2>
-            <p style="font-size:1.5rem; margin:2rem 0;">
+            <h2>Siap Membantu Tim Anda</h2>
+            <p style="font-size:1.6rem; margin:2rem 0;">
                 <i class="fas fa-phone"></i> +62 821-1313-1149<br>
-                <i class="fas fa-envelope"></i> ynnadr@gmail.com
+                <i class="fas fa-envelope"></i> ynnadr@gmail.com<br><br>
+                <a href="mailto:ynnadr@gmail.com" class="btn" style="background:white; color:var(--dark);">
+                    Kirim Pesan Sekarang
+                </a>
             </p>
-            <a href="mailto:ynnadr@gmail.com" class="btn" style="background:white; color:var(--dark);" data-key="contact_btn">Send Email</a>
         </div>
     </section>
 
-    <footer data-key="footer">© 2025 R Danny Ramadhan – All rights reserved.</footer>
+    <footer>
+        © 2025 R Danny Ramadhan – All rights reserved.
+    </footer>
 
     <script>
-        // Bilingual JSON (sama seperti sebelumnya + beberapa tambahan)
-        const translations = {
-            en: { /* ... sama seperti versi sebelumnya, ditambah: */
-                nav_home:"Home", nav_about:"About", nav_skills:"Skills", nav_projects:"Projects", nav_experience:"Experience", nav_contact:"Contact",
-                hero_name:"R Danny Ramadhan", hero_title:"Senior IT Project Manager • ISO27001 Consultant • Full-Stack Developer",
-                hero_desc:"28+ years building secure, scalable digital solutions across Indonesia", hero_btn:"Contact Me",
-                about_title:"About Me", about_text:"Seasoned IT professional with over 28 years of experience in Project Management, ISO27001 implementation, full-stack development, and leadership. Active mentor for Gerakan Nasional 1000 Startup & Google Startup Weekend.",
-                skills_title:"Core Competencies", projects_title:"Recent Projects (2025)",
-                proj_bfs:"Server migration → VPS, security hardening, Xendit Payment Gateway reactivation → 100% uptime",
-                proj_wresni:"Luxury Bali real estate website (WordPress): villa & land listings, inquiry forms, SEO optimized",
-                proj_tesola:"Full web app with registration, assessment, auto-certificate, Midtrans payment",
-                exp_title:"Full Professional Experience",
-                contact_title:"Contact Me", contact_btn:"Send Email", footer:"© 2025 R Danny Ramadhan – All rights reserved."
-            },
-            id: { /* terjemahan Indonesia seperti sebelumnya */ 
-                nav_home:"Beranda", nav_about:"Tentang", nav_skills:"Keahlian", nav_projects:"Proyek", nav_experience:"Pengalaman", nav_contact:"Kontak",
-                hero_name:"R Danny Ramadhan", hero_title:"Senior IT Project Manager • Konsultan ISO27001 • Full-Stack Developer",
-                hero_desc:"28+ tahun membangun solusi digital aman & skalabel di Indonesia", hero_btn:"Hubungi Saya",
-                about_title:"Tentang Saya", about_text:"Profesional IT berpengalaman lebih dari 28 tahun di Project Management, implementasi ISO27001, pengembangan full-stack, dan kepemimpinan tim. Mentor aktif Gerakan Nasional 1000 Startup & Google Startup Weekend.",
-                skills_title:"Kompetensi Inti", projects_title:"Proyek Terbaru (2025)",
-                proj_bfs:"Migrasi server → VPS, security hardening, aktivasi ulang Xendit → 100% uptime",
-                proj_wresni:"Website real estate mewah Bali (WordPress): listing villa & tanah, form inquiry, SEO optimal",
-                proj_tesola:"Aplikasi web lengkap: registrasi, penilaian, sertifikat otomatis, pembayaran Midtrans",
-                exp_title:"Pengalaman Kerja Lengkap",
-                contact_title:"Hubungi Saya", contact_btn:"Kirim Email", footer:"© 2025 R Danny Ramadhan – Hak cipta dilindungi."
-            }
-        };
+        // Navigation & Section Switch
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('section');
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
 
-        // Language Switch
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const lang = btn.dataset.lang;
-                document.documentElement.lang = lang;
-                document.querySelectorAll('[data-key]').forEach(el => {
-                    const key = el.dataset.key;
-                    if (translations[lang][key]) el.innerHTML = translations[lang][key];
-                });
-                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = item.getAttribute('data-section');
+
+                // Update active nav
+                navItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+
+                // Show target section
+                sections.forEach(sec => sec.classList.remove('active'));
+                document.getElementById(target).classList.add('active');
+
+                // Close mobile menu
+                navLinks.classList.remove('show');
             });
         });
 
-        // Accordion
-        document.querySelectorAll('.accordion-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const content = header.nextElementSibling;
-                const isOpen = content.classList.contains('open');
-                // Close all
-                document.querySelectorAll('.accordion-content').forEach(c => {
-                    c.classList.remove('open');
-                    c.previousElementSibling.classList.remove('active');
-                });
-                // Open clicked
-                if (!isOpen) {
-                    content.classList.add('open');
-                    header.classList.add('active');
-                }
-            });
+        // Mobile menu toggle
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
         });
 
-        // Smooth scroll & mobile menu (sama seperti sebelumnya)
-        document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'}); }));
-        document.querySelector('.menu-toggle').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('show'));
+        // Smooth scroll for hero links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                if (a.getAttribute('href') !== '#') return;
+                e.preventDefault();
+            });
+        });
     </script>
 </body>
 </html>
