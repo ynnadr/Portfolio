@@ -16,11 +16,11 @@
             --gray: #6b7280;
         }
         * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: 'Inter', sans-serif; line-height:1.7; color:#333; background:var(--light); }
+        body { font-family: 'Inter', sans-serif; line-height:1.7; color:#333; background:var(--light); overflow-x:hidden; }
         a { text-decoration:none; }
         .container { max-width:1400px; margin:0 auto; padding:0 1.5rem; }
 
-        /* Navigation */
+        /* Navigation Fixed */
         nav {
             position:fixed; top:0; left:0; right:0; z-index:1000;
             background:rgba(255,255,255,0.95); backdrop-filter:blur(10px);
@@ -29,13 +29,14 @@
         .nav-content { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 0; }
         .logo { font-size:1.6rem; font-weight:700; color:var(--primary); }
         .nav-links { display:none; gap:1.8rem; align-items:center; flex-wrap:wrap; }
-        .nav-links a { font-weight:500; color:var(--dark); padding:0.5rem 0; }
-        .nav-links a:hover { color:var(--primary); }
+        .nav-links a { font-weight:500; color:var(--dark); padding:0.5rem 0; position:relative; }
+        .nav-links a::after { content:''; position:absolute; bottom:0; left:50%; width:0; height:2px; background:var(--primary); transition:0.3s; transform:translateX(-50%); }
+        .nav-links a:hover::after, .nav-links a.active::after { width:100%; }
         .menu-toggle { font-size:1.6rem; cursor:pointer; color:var(--dark); }
 
         /* Hero */
         #hero {
-            height:100vh; min-height:620px;
+            min-height:100vh; padding-top:100px;
             background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('images/hero.jpg') center/cover no-repeat;
             display:flex; align-items:center; color:white; text-align:center;
         }
@@ -43,15 +44,16 @@
             width:160px; height:160px; border-radius:50%; border:6px solid white; margin-bottom:1.5rem;
             object-fit:cover; box-shadow:0 10px 30px rgba(0,0,0,0.5);
         }
-        .hero-content h1 { font-size:2.8rem; margin-bottom:0.8 Ra; }
+        .hero-content h1 { font-size:2.8rem; margin-bottom:0.8rem; }
         .hero-content p { font-size:1.25rem; max-width:800px; margin:0 auto 1.5rem; }
-        .btn { display:inline-block; padding:1rem 2.2rem; background:var(--primary); color:white; border-radius:50px; font-weight:600; }
-        .btn:hover { background:var(--primary-light); }
+        .btn { display:inline-block; padding:1rem 2.2rem; background:var(--primary); color:white; border-radius:50px; font-weight:600; transition:0.3s; }
+        .btn:hover { background:var(--primary-light); transform:translateY(-3px); }
 
         /* Sections */
         section { padding:6rem 0; display:none; }
         section.active { display:block; }
         h2 { font-size:2.4rem; text-align:center; margin-bottom:3rem; color:var(--dark); }
+        h2 small { display:block; font-size:1rem; font-weight:400; margin-top:0.8rem; color:var(--gray); }
         .grid { display:grid; gap:2rem; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); }
         .card {
             background:white; padding:2rem; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.08);
@@ -84,12 +86,12 @@
         <div class="container nav-content">
             <div class="logo">R Danny Ramadhan</div>
             <div class="nav-links" id="navLinks">
-                <a href="#hero" class="nav-item active" data-section="hero">Home</a>
-                <a href="#project-management" class="nav-item" data-section="project-management">Senior Project Management</a>
-                <a href="#development" class="nav-item" data-section="development">Full-Stack Development</a>
-                <a href="#leadership" class="nav-item" data-section="leadership">Leadership & Management</a>
-                <a href="#general" class="nav-item" data-section="general">General Competencies</a>
-                <a href="#contact" class="nav-item" data-section="contact">Contact</a>
+                <a href="#" class="nav-item active" data-section="hero">Home</a>
+                <a href="#" class="nav-item" data-section="project-management">Senior Project Management</a>
+                <a href="#" class="nav-item" data-section="development">Full-Stack Development</a>
+                <a href="#" class="nav-item" data-section="leadership">Leadership & Management</a>
+                <a href="#" class="nav-item" data-section="general">General Competencies</a>
+                <a href="#" class="nav-item" data-section="contact">Contact</a>
             </div>
             <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
         </div>
@@ -103,7 +105,7 @@
             <p style="font-size:1.4rem; font-weight:600;">Senior IT Professional dengan 28+ Tahun Pengalaman</p>
             <p>Project Manager • Full-Stack Developer • Leader • ISO27001 Expert</p>
             <br>
-            <a href="#contact" class="btn">Hubungi Saya Sekarang</a>
+            <a href="#" class="btn" data-section="contact">Hubungi Saya Sekarang</a>
         </div>
     </section>
 
@@ -115,10 +117,10 @@
                 <div class="card">
                     <h3>Proyek Ikonik</h3>
                     <ul>
-                        <li>SAP ERP Implementation – Semen Bosowa Group (Transportation + FI-CO)</li>
-                        <li>Data Center Baru & Migrasi Zero-Downtime – KPK (2015)</li>
-                        <li>Platform Digital Nasional – Kementerian Perhubungan & PU</li>
-                        <li>Sistem Kejuaraan Atletik Nasional PAMI (2023–2024)</li>
+                        <li>SAP ERP Implementation – Semen Bosowa Group</li>
+                        <li>Data Center Baru & Migrasi Zero-Downtime – KPK</li>
+                        <li>Platform Digital – Kementerian Perhubungan & PU</li>
+                        <li>Sistem Kejuaraan Atletik Nasional PAMI</li>
                         <li>ISO27001 Bank Sumsel Babel – Sertifikasi dalam 4 bulan</li>
                     </ul>
                 </div>
@@ -126,25 +128,23 @@
                     <h3>Metodologi & Tools</h3>
                     <ul>
                         <li>Agile + Waterfall (hybrid expert)</li>
-                        <li>Microsoft Project, Jira, Trello</li>
-                        <li>Budget & resource planning hingga ratusan juta</li>
-                        <li>Stakeholder management lintas direksi & kementerian</li>
+                        <li>Microsoft Project, Jira</li>
+                        <li>Budget & resource planning</li>
+                        <li>Stakeholder management level C-level & kementerian</li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h3>Industri yang Pernah Ditangani</h3>
+                    <h3>Industri</h3>
                     <ul>
-                        <li>Perbankan & Fintech</li>
-                        <li>Pemerintahan & BUMN</li>
-                        <li>Konstruksi Nasional (ASPEKINDO)</li>
-                        <li>Travel & Real Estate</li>
+                        <li>Perbankan, Pemerintahan, Konstruksi</li>
+                        <li>Travel, Real Estate, Asosiasi Nasional</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 2. FULL-STACK DEVELOPMENT (Aktif 2025) -->
+    <!-- 2. FULL-STACK DEVELOPMENT -->
     <section id="development">
         <div class="container">
             <h2>Full-Stack Development<br><small>Aktif & Hasil Nyata 2025</small></h2>
@@ -153,26 +153,24 @@
                     <h3>Proyek Terbaru 2025</h3>
                     <ul>
                         <li><strong>bfswedding.com</strong> – Migrasi VPS + aktivasi Xendit Payment Gateway</li>
-                        <li><strong>wresni.id</strong> – Website real estate Bali premium (listing villa/tanah + inquiry)</li>
-                        <li><strong>Tesola Indonesia</strong> – Platform sertifikasi soft-skills lengkap + Midtrans</li>
+                        <li><strong>wresni.id</strong> – Website real estate Bali premium (listing + inquiry)</li>
+                        <li><strong>Tesola Indonesia</strong> – Platform sertifikasi soft-skills lengkap + pembayaran QRIS</li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h3>Tumpukan Teknologi</h3>
+                    <h3>Teknologi</h3>
                     <ul>
                         <li>PHP Native, JavaScript, HTML5/CSS3</li>
-                        <li>WordPress Custom Theme & Plugin</li>
-                        <li>MySQL, PostgreSQL, MongoDB</li>
-                        <li>Payment Gateway: Xendit, Midtrans</li>
-                        <li>Server: VPS, Shared → VPS migration, Security Hardening</li>
+                        <li>WordPress Custom, MySQL/PostgreSQL</li>
+                        <li>Payment: QRIS, Xendit</li>
+                        <li>Server migration & security hardening</li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h3>Spesialisasi</h3>
+                    <h3>Fokus</h3>
                     <ul>
-                        <li>Real Estate & Wedding Website (Bali market)</li>
-                        <li>Platform e-Learning & Sertifikasi</li>
-                        <li>Custom business application dari nol</li>
+                        <li>Real Estate & Wedding Bali</li>
+                        <li>Platform Sertifikasi & Membership</li>
                     </ul>
                 </div>
             </div>
@@ -187,25 +185,25 @@
                 <div class="card">
                     <h3>Posisi Eksekutif</h3>
                     <ul>
-                        <li>Chief Operating Officer – PT Jaganti Nusantara Travel (2016–2017)</li>
-                        <li>IT Manager – ASPEKINDO (2019–2022)</li>
-                        <li>IT Manager – Pemerintah Daerah & perusahaan swasta (1996–2004)</li>
+                        <li>Chief Operating Officer – PT Jaganti Nusantara Travel</li>
+                        <li>IT Manager – ASPEKINDO Nasional</li>
+                        <li>IT Manager – Pemerintah Daerah & swasta</li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h3>Pencapaian Leadership</h3>
+                    <h3>Pencapaian</h3>
                     <ul>
-                        <li>Menaikkan efisiensi operasional tim IT hingga 40%</li>
-                        <li>Memimpin tim lintas fungsi (developer, QA, infrastructure)</li>
-                        <li>Mentor Gerakan Nasional 1000 Startup (Kominfo) & Google Startup Weekend</li>
+                        <li>Efisiensi tim IT +40%</li>
+                        <li>Mentor Gerakan 1000 Startup Kominfo</li>
+                        <li>Google Startup Weekend Mentor</li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h3>Gaya Kepemimpinan</h3>
+                    <h3>Gaya</h3>
                     <ul>
                         <li>Hands-on technical leader</li>
-                        <li>Fokus hasil & people development</li>
-                        <li>Pernah kelola P&L perusahaan travel</li>
+                        <li>P&L responsibility</li>
+                        <li>People development focus</li>
                     </ul>
                 </div>
             </div>
@@ -220,30 +218,29 @@
                 <div class="card">
                     <h3>Information Security</h3>
                     <ul>
-                        <li>ISO27001 Lead Implementer (7+ proyek sukses)</li>
-                        <li>Risk Assessment, Gap Analysis, Internal Audit</li>
+                        <li>ISO27001 Lead Implementer (7+ proyek)</li>
+                        <li>Risk Assessment & Audit</li>
                     </ul>
                 </div>
                 <div class="card">
                     <h3>Quality Assurance</h3>
                     <ul>
-                        <li>Head of QA & Change Management – Telkom Sigma (2008–2013)</li>
-                        <li>Kurangi defect release hingga 65%</li>
+                        <li>Head of QA Telkom Sigma</li>
+                        <li>Defect reduction 65%</li>
                     </ul>
                 </div>
                 <div class="card">
                     <h3>Infrastructure</h3>
                     <ul>
-                        <li>Data Center Supervision (KPK)</li>
-                        <li>IP-VSAT, Server Migration, Security Hardening</li>
+                        <li>Data Center KPK Supervision</li>
+                        <li>IP-VSAT, Migration</li>
                     </ul>
                 </div>
                 <div class="card">
                     <h3>Soft Skills</h3>
                     <ul>
-                        <li>Communication & Presentation (C-level)</li>
-                        <li>Problem Solving & Analytical Thinking</li>
-                        <li>Mentoring & Knowledge Transfer</li>
+                        <li>Communication C-level</li>
+                        <li>Problem Solving & Mentoring</li>
                     </ul>
                 </div>
             </div>
@@ -269,7 +266,6 @@
     </footer>
 
     <script>
-        // Navigation & Section Switch
         const navItems = document.querySelectorAll('.nav-item');
         const sections = document.querySelectorAll('section');
         const menuToggle = document.getElementById('menuToggle');
@@ -278,17 +274,26 @@
         navItems.forEach(item => {
             item.addEventListener('click', (e) => {
                 e.preventDefault();
-                const target = item.getAttribute('data-section');
+                const targetId = item.getAttribute('data-section');
 
-                // Update active nav
+                // Update active menu
                 navItems.forEach(i => i.classList.remove('active'));
                 item.classList.add('active');
 
-                // Show target section
+                // Hide all sections
                 sections.forEach(sec => sec.classList.remove('active'));
-                document.getElementById(target).classList.add('active');
 
-                // Close mobile menu
+                // Show target section
+                const targetSection = document.getElementById(targetId);
+                targetSection.classList.add('active');
+
+                // AUTO SCROLL ke section yang dipilih (dengan offset navbar)
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+
+                // Tutup menu mobile
                 navLinks.classList.remove('show');
             });
         });
@@ -296,14 +301,6 @@
         // Mobile menu toggle
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('show');
-        });
-
-        // Smooth scroll for hero links
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => {
-                if (a.getAttribute('href') !== '#') return;
-                e.preventDefault();
-            });
         });
     </script>
 </body>
