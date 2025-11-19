@@ -14,6 +14,7 @@
             --dark: #111827;
             --light: #f9fafb;
             --gray: #6b7280;
+            --vibe: #a78bfa;
         }
         * { margin:0; padding:0; box-sizing:border-box; }
         body { font-family: 'Inter', sans-serif; line-height:1.7; color:#333; background:var(--light); overflow-x:hidden; }
@@ -26,7 +27,7 @@
             box-shadow:0 2px 20px rgba(0,0,0,0.1);
         }
         .nav-content { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 0; }
-        .logo { font-size:1.7rem; font-weight:700; color:var(--primary); }
+        .logo { font-size:1.8rem; font-weight:700; color:var(--primary); }
         .nav-links { display:none; gap:1.8rem; align-items:center; flex-wrap:wrap; }
         .nav-links a { font-weight:500; color:var(--dark); position:relative; }
         .nav-links a::after { content:''; position:absolute; bottom:0; left:50%; width:0; height:2px; background:var(--primary); transition:0.3s; transform:translateX(-50%); }
@@ -61,6 +62,7 @@
         }
         .card:hover { transform:translateY(-8px); }
         .card h3 { color:var(--primary); margin-bottom:1rem; font-size:1.4rem; }
+        .highlight { background:var(--vibe); color:white; padding:0.2rem 0.6rem; border-radius:4px; font-size:0.85rem; font-weight:600; }
         ul { padding-left:1.5rem; }
         li { margin-bottom:0.8rem; }
 
@@ -144,7 +146,7 @@
         </div>
     </section>
 
-    <!-- FULL-STACK DEVELOPMENT -->
+    <!-- FULL-STACK DEVELOPMENT (dengan Vibe Coding) -->
     <section id="development">
         <div class="container">
             <h2 data-key="dev_title">Full-Stack Development<br><small>Active & Real Results 2025</small></h2>
@@ -153,24 +155,29 @@
                     <h3 data-key="dev_recent">Latest Projects 2025</h3>
                     <ul>
                         <li><strong>bfswedding.com</strong> – VPS Migration + Xendit Payment Gateway</li>
-                        <li><strong>wresni.id</strong> – Premium Bali Real Estate Website (listing + inquiry)</li>
-                        <li><strong>Tesola Indonesia</strong> – Soft-Skills Certification Platform + QRIS Payment</li>
+                        <li><strong>wresni.id</strong> – Premium Bali Real Estate Website</li>
+                        <li><strong>Tesola Indonesia</strong> – Soft-Skills Certification Platform + QRIS Payment<br>
+                            <span class="highlight">100% built using Vibe Coding – 2025 trend</span>
+                        </li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h3 data-key="dev_tech">Technology Stack</h3>
+                    <h3>Technology Stack</h3>
                     <ul>
                         <li>PHP Native, JavaScript, HTML5/CSS3</li>
-                        <li>WordPress Custom, MySQL/PostgreSQL</li>
-                        <li>Payment: QRIS, Xendit</li>
+                        <li>WordPress Custom Theme & Plugin</li>
+                        <li>MySQL, PostgreSQL</li>
+                        <li>Payment Gateway: QRIS, Xendit</li>
+                        <li><strong>Vibe Coding</strong> – Latest 2025 development workflow (rapid prototyping, clean architecture, AI-assisted coding)</li>
                         <li>Server Migration & Security Hardening</li>
                     </ul>
                 </div>
                 <div class="card">
                     <h3 data-key="dev_focus">Focus Areas</h3>
                     <ul>
-                        <li>Bali Real Estate & Wedding Websites</li>
-                        <li>Certification & Membership Platforms</li>
+                        <li>Bali Real Estate & Wedding Platforms</li>
+                        <li>Certification & Membership Systems</li>
+                        <li>Modern, Scalable & Maintainable Code</li>
                     </ul>
                 </div>
             </div>
@@ -182,7 +189,7 @@
         <div class="container">
             <h2 data-key="lead_title">Leadership & Operational Excellence<br><small>COO • IT Manager • Team Leader</small></h2>
             <div class="grid">
-                <div class="card">
+                <div class="card=">
                     <h3 data-key="lead_pos">Executive Positions</h3>
                     <ul>
                         <li>Chief Operating Officer – PT Jaganti Nusantara Travel</li>
@@ -262,7 +269,6 @@
     <footer data-key="footer">© 2025 Danny Ramadhan – All rights reserved.</footer>
 
     <script>
-        // ====== BILINGUAL JSON ======
         const translations = {
             en: {
                 nav_home: "Home", nav_pm: "Senior Project Management", nav_dev: "Full-Stack Development", nav_lead: "Leadership", nav_general: "General Competencies", nav_contact: "Contact",
@@ -273,7 +279,7 @@
                 pm_title: "Senior Project Management<br><small>20+ Large-Scale & Complex Projects</small>",
                 pm_iconic: "Iconic Projects", pm_method: "Methodology & Tools", pm_industry: "Industries",
                 dev_title: "Full-Stack Development<br><small>Active & Real Results 2025</small>",
-                dev_recent: "Latest Projects 2025", dev_tech: "Technology Stack", dev_focus: "Focus Areas",
+                dev_recent: "Latest Projects 2025", dev_focus: "Focus Areas",
                 lead_title: "Leadership & Operational Excellence<br><small>COO • IT Manager • Team Leader</small>",
                 lead_pos: "Executive Positions", lead_achieve: "Key Achievements", lead_style: "Leadership Style",
                 gen_title: "General & Supporting Competencies",
@@ -290,7 +296,7 @@
                 pm_title: "Senior Project Management<br><small>20+ Proyek Berskala Besar & Kompleks</small>",
                 pm_iconic: "Proyek Ikonik", pm_method: "Metodologi & Tools", pm_industry: "Industri",
                 dev_title: "Full-Stack Development<br><small>Aktif & Hasil Nyata 2025</small>",
-                dev_recent: "Proyek Terbaru 2025", dev_tech: "Tumpukan Teknologi", dev_focus: "Bidang Fokus",
+                dev_recent: "Proyek Terbaru 2025", dev_focus: "Bidang Fokus",
                 lead_title: "Kepemimpinan & Operational Excellence<br><small>COO • IT Manager • Team Leader</small>",
                 lead_pos: "Jabatan Eksekutif", lead_achieve: "Pencapaian Utama", lead_style: "Gaya Kepemimpinan",
                 gen_title: "Kompetensi Umum & Pendukung",
@@ -300,45 +306,33 @@
             }
         };
 
-        // ====== NAVIGATION & SCROLL ======
         const navItems = document.querySelectorAll('.nav-item');
         const sections = document.querySelectorAll('section');
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
 
         navItems.forEach(item => {
-            item.addEventListener('click', (e) => {
+            item.addEventListener('click', e => {
                 e.preventDefault();
                 const targetId = item.getAttribute('data-section');
-
                 navItems.forEach(i => i.classList.remove('active'));
                 item.classList.add('active');
-
                 sections.forEach(sec => sec.classList.remove('active'));
-                const targetSection = document.getElementById(targetId);
-                targetSection.classList.add('active');
-
-                window.scrollTo({
-                    top: targetSection.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-
+                document.getElementById(targetId).classList.add('active');
+                window.scrollTo({ top: document.getElementById(targetId).offsetTop - 80, behavior: 'smooth' });
                 navLinks.classList.remove('show');
             });
         });
 
         menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
 
-        // ====== LANGUAGE SWITCHER ======
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const lang = btn.dataset.lang;
                 document.documentElement.lang = lang;
                 document.querySelectorAll('[data-key]').forEach(el => {
                     const key = el.dataset.key;
-                    if (translations[lang][key]) {
-                        el.innerHTML = translations[lang][key];
-                    }
+                    if (translations[lang][key]) el.innerHTML = translations[lang][key];
                 });
                 document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
