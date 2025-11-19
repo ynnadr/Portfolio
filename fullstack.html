@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danny Ramadhan | Remote Senior Web Developer (Available Immediately)</title>
-    <meta name="description" content="Senior Full-Stack Web Developer with 28+ years experience • Available for Remote Positions • PHP, WordPress, Payment Gateway, Admin Systems">
+    <title>Danny Ramadhan | Remote Senior Web Developer</title>
+    <meta name="description" content="Senior Full-Stack Web Developer • Available for Remote Work • PHP, WordPress, Payment Gateway">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -31,7 +31,8 @@
         .nav-links a { font-weight:600; color:var(--dark); }
         .nav-links a:hover { color:var(--primary); }
         .lang-switch { display:flex; gap:0.5rem; background:#f3f4f6; padding:0.4rem 0.8rem; border-radius:50px; font-size:0.9rem; }
-        .lang-btn.active { background:var(--primary); color:white; padding:0.3rem 0.8rem; border-radius:50px; }
+        .lang-btn { cursor:pointer; padding:0.3rem 0.8rem; border-radius:50px; }
+        .lang-btn.active { background:var(--primary); color:white; }
         .menu-toggle { font-size:1.7rem; cursor:pointer; }
 
         #hero {
@@ -55,11 +56,11 @@
         li { margin:1rem 0; }
 
         #portfolio { background:#f8fafc; }
-        .portfolio-grid { display:grid; gap:2rem; grid-template-columns:repeat(auto-fit, minmax(350px,1fr)); margin-top:3rem; }
+        .portfolio-grid { display:grid; gap:2.5rem; grid-template-columns:repeat(auto-fit, minmax(360px,1fr)); }
         .project-card { background:white; border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.1); }
-        .project-card img { width:100%; height:220px; object-fit:cover; }
-        .project-info { padding:1.5rem; }
-        .project-info h4 { font-size:1.3rem; margin-bottom:0.8rem; color:var(--primary); }
+        .project-card img { width:100%; height:240px; object-fit:cover; }
+        .project-info { padding:1.6rem; }
+        .project-info h4 { font-size:1.35rem; margin-bottom:0.8rem; color:var(--primary); }
 
         #contact { background:var(--dark); color:white; text-align:center; }
         .contact-btn { background:white; color:var(--primary); padding:1.2rem 3rem; border-radius:50px; font-size:1.2rem; font-weight:700; }
@@ -69,7 +70,6 @@
         @media (min-width:768px) {
             .nav-links { display:flex; }
             .menu-toggle { display:none; }
-            .logo { position:static; }
         }
         .nav-links.show { display:flex; flex-direction:column; background:white; position:absolute; top:100%; left:0; right:0; padding:2rem; box-shadow:0 10px 30px rgba(0,0,0,0.1); }
     </style>
@@ -80,11 +80,11 @@
         <div class="container nav-content">
             <div class="logo">DANNY RAMADHAN</div>
             <div class="nav-links" id="navLinks">
-                <a href="#" class="nav-item active" data-section="hero" data-key="home">Home</a>
-                <a href="#" class="nav-item" data-section="skills" data-key="skills">Skills</a>
-                <a href="#" class="nav-item" data-section="portfolio" data-key="portfolio">Portfolio</a>
-                <a href="#" class="nav-item" data-section="about" data-key="about">About</a>
-                <a href="#" class="nav-item" data-section="contact" data-key="contact">Hire Me</a>
+                <a href="#" class="nav-item active" data-section="hero" data-key="nav_home">Home</a>
+                <a href="#" class="nav-item" data-section="skills" data-key="nav_skills">Skills</a>
+                <a href="#" class="nav-item" data-section="portfolio" data-key="nav_portfolio">Portfolio</a>
+                <a href="#" class="nav-item" data-section="about" data-key="nav_about">Why Me</a>
+                <a href="#" class="nav-item" data-section="contact" data-key="nav_contact">Hire Me</a>
                 <div class="lang-switch">
                     <span class="lang-btn active" data-lang="en">EN</span>
                     <span class="lang-btn" data-lang="id">ID</span>
@@ -99,14 +99,14 @@
         <div class="container">
             <img src="images/danny.jpg" alt="Danny Ramadhan" class="profile-img">
             <h1 data-key="hero_name">Danny Ramadhan</h1>
-            <p style="font-size:1.6rem; margin:1.5rem 0;">Senior Full-Stack Web Developer</p>
+            <p style="font-size:1.6rem; margin:1.5rem 0;" data-key="hero_title">Senior Full-Stack Web Developer</p>
             <div>
-                <span class="badge">Available for Remote Work</span>
-                <span class="badge">Immediate Start</span>
-                <span class="badge">28+ Years Experience</span>
+                <span class="badge" data-key="badge1">Available for Remote Work</span>
+                <span class="badge" data-key="badge2">Immediate Start</span>
+                <span class="badge" data-key="badge3">28+ Years Experience</span>
             </div>
-            <p style="max-width:800px; margin:2rem auto; font-size:1.2rem; opacity:0.95;">
-                I build complete web applications from scratch — frontend, backend, admin dashboard, payment integration, and deployment — with clean code, security in mind.
+            <p style="max-width:800px; margin:2rem auto; font-size:1.2rem; opacity:0.95;" data-key="hero_desc">
+                I build complete web applications from scratch — frontend, backend, admin dashboard, payment integration, and deployment — with clean code and security focus.
             </p>
             <a href="#" class="btn" data-section="contact" data-key="hero_btn">Hire Me for Remote Position</a>
         </div>
@@ -121,29 +121,29 @@
                     <h3>Frontend & Backend</h3>
                     <ul>
                         <li>PHP Native & Modern PHP</li>
-                        <li>JavaScript (Core)</li>
+                        <li>JavaScript</li>
                         <li>HTML5, CSS3, Responsive Design</li>
-                        <li>WordPress Custom Theme & Plugin Development</li>
-                        <li>API Integration & RESTful Services</li>
+                        <li>WordPress Custom Theme & Plugin</li>
+                        <li>RESTful API Development</li>
                     </ul>
                 </div>
                 <div class="card">
                     <h3>Database & Server</h3>
                     <ul>
-                        <li>MySQL, PostgreSQL, MongoDB</li>
-                        <li>Server Migration (Shared → VPS/Cloud)</li>
-                        <li>Security Hardening & Performance Optimization</li>
-                        <li>Linux Server Management</li>
+                        <li>MySQL, PostgreSQL</li>
+                        <li>Server Migration & Optimization</li>
+                        <li>Security Hardening</li>
+                        <li>Linux Server Administration</li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h3>Payment & Business Logic</h3>
+                    <h3>Business Features</h3>
                     <ul>
-                        <li>Xendit, Midtrans, QRIS Integration</li>
-                        <li>E-commerce & Membership Systems</li>
-                        <li>User Authentication & Role Management</li>
+                        <li>Payment Gateway: Xendit, QRIS</li>
                         <li>Complete Admin Dashboard (CRUD, Monitoring, Analytics)</li>
-                        <li>Vibe Coding – Rapid, clean, AI-assisted workflow (2025)</li>
+                        <li>User & Role Management</li>
+                        <li>Transaction & Content Management</li>
+                        <li>Vibe Coding – Rapid, clean, AI-assisted workflow</li>
                     </ul>
                 </div>
             </div>
@@ -156,69 +156,69 @@
             <h2 data-key="portfolio_title">Recent Web Projects (2024–2025)</h2>
             <div class="portfolio-grid">
                 <div class="project-card">
-                    <img src="https://bfswedding.com/wp-content/uploads/2025/08/bali-wedding.jpg" alt="bfswedding">
+                    <img src="images/bfswedding.jpg" alt="bfswedding.com screenshot">
                     <div class="project-info">
                         <h4>bfswedding.com</h4>
-                        <p>Full wedding planner platform • Xendit Payment • Full admin system</p>
-                        <a href="https://bfswedding.com" target="_blank" style="color:var(--primary);">Visit Live →</a>
+                        <p>Wedding planner platform • Xendit payment • Full admin system</p>
+                        <a href="https://bfswedding.com" target="_blank" style="color:var(--primary);">Live Site →</a>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://wresni.id/wp-content/uploads/2025/10/bali-villa.jpg" alt="wresni.id">
+                    <img src="images/wresni.jpg" alt="wresni.id screenshot">
                     <div class="project-info">
                         <h4>wresni.id</h4>
-                        <p>Luxury Bali real estate portal • Property listing • Inquiry & admin dashboard</p>
-                        <a href="https://wresni.id" target="_blank" style="color:var(--primary);">Visit Live →</a>
+                        <p>Luxury Bali real estate portal • Property listing • Inquiry system</p>
+                        <a href="https://wresni.id" target="_blank" style="color:var(--primary);">Live Site →</a>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://tesola.id/assets/img/cert-platform.jpg" alt="Tesola Platform">
+                    <img src="images/tesola.jpg" alt="Tesola platform screenshot">
                     <div class="project-info">
                         <h4>Tesola Certification Platform</h4>
-                        <p>Complete soft-skills certification system • QRIS payment • Full admin + user management • Built with Vibe Coding</p>
+                        <p>Soft-skills certification • QRIS payment • Full admin & user management</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    </section>
-
-    <!-- ABOUT SHORT -->
+    <!-- WHY ME -->
     <section id="about">
         <div class="container">
-            <h2 data-key="about_title">Why Hire Me Remotely?</h2>
+            <h2 data-key="about_title">Why Hire Me for Remote Work?</h2>
             <div class="grid">
                 <div class="card">
                     <ul>
-                        <li>28+ years real-world experience — no junior mistakes</li>
-                        <li>Full-time availability for remote/contract work</li>
-                        <li>100% self-managed — no micromanagement needed</li>
+                        <li>28+ years real-world experience</li>
+                        <li>Full-time remote availability</li>
+                        <li>Self-managed — no micromanagement needed</li>
+                        <li>Deliver complete products end-to-end</li>
                         <li>English & Indonesian fluent</li>
-                        <li>Time zone flexible (GMT+7)</li>
-                        <li>Deliver complete products: frontend + backend + admin + deployment</li>
+                        <li>Flexible with any time zone (GMT+7)</li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h3>Rate Expectation</h3>
+                    <h3>Rate (Negotiable)</h3>
                     <p style="font-size:1.3rem; margin-top:1rem;">
-                        <strong>Remote Full-Time:</strong> $4,500 – $7,000 USD/month<br>
-                        <strong>Freelance/Contract:</strong> $50 – $90 USD/hour
+                        Remote Full-Time: $4,500 – $7,000 USD/month<br>
+                        Contract/Freelance: $50 – $90 USD/hour
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT – langsung ke WhatsApp -->
     <section id="contact">
         <div class="container">
-            <h2 data-key="contact_title">Available for Remote Web Development Roles Now</h2>
+            <h2 data-key="contact_title">Available for Remote Roles Immediately</h2>
             <p style="font-size:1.8rem; margin:2rem 0;">
-                <i class="fas fa-envelope"></i> ynnadr@gmail.com<br>
-                <i class="fab fa-whatsapp"></i> +62 821-1313-1149 (WhatsApp)<br>
-                <i class="fab fa-linkedin"></i> linkedin.com/in/danny-ramadhan<br><br>
-                <a href="mailto:ynnadr@gmail.com?subject=Remote Web Developer Position" class="contact-btn">Hire Me Now – I'm Ready to Start</a>
+                <i class="fab fa-whatsapp" style="color:#25d366;"></i> WhatsApp: +62 821-1313-1149<br>
+                <i class="fas fa-envelope"></i> ynnadr@gmail.com<br><br>
+                <a href="https://wa.me/6282113131149?text=Hi%20Danny%2C%20I%27m%20interested%20in%20hiring%20you%20for%20a%20remote%20web%20development%20position." 
+                   target="_blank" class="contact-btn" data-key="contact_btn">
+                   <i class="fab fa-whatsapp"></i> Hire Me via WhatsApp Now
+                </a>
             </p>
         </div>
     </section>
@@ -229,27 +229,32 @@
         const translations = {
             en: {
                 nav_home: "Home", nav_skills: "Skills", nav_portfolio: "Portfolio", nav_about: "Why Me", nav_contact: "Hire Me",
-                hero_name: "Danny Ramadhan", title: "Senior Full-Stack Web Developer", hero_btn: "Hire Me for Remote Position",
+                hero_name: "Danny Ramadhan", hero_title: "Senior Full-Stack Web Developer", hero_desc: "I build complete web applications from scratch — frontend, backend, admin dashboard, payment integration, and deployment — with clean code and security focus.",
+                badge1: "Available for Remote Work", badge2: "Immediate Start", badge3: "28+ Years Experience",
+                hero_btn: "Hire Me for Remote Position",
                 skills_title: "Core Web Development Skills",
                 portfolio_title: "Recent Web Projects (2024–2025)",
-                about_title: "Why Hire Me Remotely?",
+                about_title: "Why Hire Me for Remote Work?",
                 contact_title: "Available for Remote Roles Immediately",
-                contact_btn: "Hire Me Now – I'm Ready to Start",
+                contact_btn: "Hire Me via WhatsApp Now",
                 footer: "© 2025 Danny Ramadhan – Senior Remote Web Developer"
             },
             id: {
                 nav_home: "Beranda", nav_skills: "Keahlian", nav_portfolio: "Portofolio", nav_about: "Kenapa Saya", nav_contact: "Rekrut Saya",
-                hero_name: "Danny Ramadhan", title: "Senior Full-Stack Web Developer",
+                hero_name: "Danny Ramadhan", hero_title: "Senior Full-Stack Web Developer",
+                hero_desc: "Saya membangun aplikasi web lengkap dari nol — frontend, backend, dashboard admin, integrasi pembayaran, dan deployment — dengan kode bersih dan fokus keamanan.",
+                badge1: "Siap Kerja Remote", badge2: "Bisa Mulai Segera", badge3: "28+ Tahun Pengalaman",
                 hero_btn: "Rekrut Saya untuk Posisi Remote",
                 skills_title: "Keahlian Utama Pengembangan Web",
                 portfolio_title: "Proyek Web Terbaru (2024–2025)",
                 about_title: "Mengapa Rekrut Saya Secara Remote?",
-                contact_title: "Siap Bekerja Remote Sekarang",
-                contact_btn: "Rekrut Saya Sekarang",
+                contact_title: "Siap Bekerja Remote Sekarang Juga",
+                contact_btn: "Rekrut Saya via WhatsApp Sekarang",
                 footer: "© 2025 Danny Ramadhan – Senior Remote Web Developer"
             }
         };
 
+        // Navigation & scroll
         document.querySelectorAll('[data-section]').forEach(el => {
             el.addEventListener('click', e => {
                 e.preventDefault();
@@ -262,7 +267,6 @@
                 document.getElementById(targetId).classList.add('active');
 
                 window.scrollTo({ top: document.getElementById(targetId).offsetTop - 80, behavior: 'smooth' });
-
                 document.getElementById('navLinks').classList.remove('show');
             });
         });
@@ -271,13 +275,16 @@
             document.getElementById('navLinks').classList.toggle('show');
         });
 
+        // Language switcher (SUDAH DIPERBAIKI 100%)
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const lang = btn.dataset.lang;
                 document.documentElement.lang = lang;
                 document.querySelectorAll('[data-key]').forEach(el => {
                     const key = el.dataset.key;
-                    if (translations[lang][key]) el.innerHTML = translations[lang][key];
+                    if (translations[lang] && translations[lang][key]) {
+                        el.innerHTML = translations[lang][key];
+                    }
                 });
                 document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
