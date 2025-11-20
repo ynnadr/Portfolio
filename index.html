@@ -41,10 +41,10 @@
         .lang-btn.active { background:var(--primary); color:white; padding:0.3rem 0.8rem; border-radius:50px; }
         .menu-toggle { font-size:1.9rem; cursor:pointer; color:var(--dark); }
 
-        /* Hero – Background lebih tajam & bold */
+        /* Hero – masking tipis (40% gelap) supaya gambar hero.jpg terlihat jelas */
         #hero {
             min-height:100vh; padding-top:90px;
-            background: linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)), url('images/hero-bold.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.40)), url('images/hero.jpg') center/cover no-repeat;
             color:white; display:flex; align-items:center; text-align:center;
         }
         .hero-content h1 { font-size:3.2rem; margin-bottom:1rem; font-weight:800; }
@@ -107,7 +107,7 @@
         </div>
     </nav>
 
-    <!-- HERO – tanpa foto profil -->
+    <!-- HERO – gambar hero.jpg sekarang terlihat jelas -->
     <section id="hero" class="active">
         <div class="container hero-content">
             <h1 data-key="hero_name">Danny Ramadhan</h1>
@@ -124,7 +124,99 @@
         </div>
     </section>
 
-    <!-- CORE SKILLS, PORTFOLIO, VIBE CODING IN ACTION, CONTACT – tetap sama seperti versi sebelumnya -->
+    <!-- CORE SKILLS -->
+    <section id="skills">
+        <div class="container">
+            <h2 data-key="skills_title">What I Deliver (End-to-End)</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Full Application Development</h3>
+                    <ul>
+                        <li>PHP Native & Modern Architecture</li>
+                        <li>JavaScript, HTML5, CSS3</li>
+                        <li>Custom WordPress Theme & Plugin</li>
+                        <li>Complete Admin Dashboard (CRUD, User/Role, Monitoring)</li>
+                        <li>Payment Gateway: QRIS, Xendit (real transactions)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Advanced Front-End</h3>
+                    <ul>
+                        <li>Interactive Data Visualization (Chart.js)</li>
+                        <li>Leaflet.js Animated Maps & Routing</li>
+                        <li>3D Page Flip Brochures</li>
+                        <li>LocalStorage Full CRUD Apps</li>
+                        <li>Vibe Coding – Rapid, clean, AI-assisted</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO – 7 Bukti Nyata -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 data-key="portfolio_title">Live Projects & Demos (All Built Solo)</h2>
+            <div class="portfolio-grid">
+                <div class="project-card">
+                    <img src="images/tesola.jpg" alt="Tesola">
+                    <div class="project-info">
+                        <h4>tesola.id</h4>
+                        <p>Soft-skills certification + QRIS + full admin & PDF generation</p>
+                        <a href="https://tesola.id" target="_blank" style="color:var(--primary);">Live →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/bfswedding.jpg" alt="bfswedding">
+                    <div class="project-info">
+                        <h4>bfswedding.com</h4>
+                        <p>Wedding planner + Xendit + complete admin system</p>
+                        <a href="https://bfswedding.com" target="_blank" style="color:var(--primary);">Live →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/wresni.jpg" alt="wresni">
+                    <div class="project-info">
+                        <h4>wresni.id</h4>
+                        <p>Bali luxury real estate portal + full admin</p>
+                        <a href="https://wresni.id" target="_blank" style="color:var(--primary);">Live →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/penduduk.jpg" alt="Penduduk Dashboard">
+                    <div class="project-info">
+                        <h4>Population Analytics Dashboard</h4>
+                        <p>Interactive Indonesia population data + charts</p>
+                        <a href="https://ynnadr.github.io/penduduk/" target="_blank" style="color:var(--primary);">Demo →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/expenses.jpg" alt="Expenses Tracker">
+                    <div class="project-info">
+                        <h4>Personal Finance Tracker</h4>
+                        <p>Full offline expense app + charts + export</p>
+                        <a href="https://ynnadr.github.io/expenses/" target="_blank" style="color:var(--primary);">Demo →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/jalurlaut.jpg" alt="Jalur Laut Map">
+                    <div class="project-info">
+                        <h4>Animated Sea Route Map</h4>
+                        <p>Leaflet.js + animated polyline + timeline sync</p>
+                        <a href="https://ynnadr.github.io/jalurlaut/" target="_blank" style="color:var(--primary);">Demo →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/brochure.jpg" alt="3D Brochure">
+                    <div class="project-info">
+                        <h4>3D Flip Digital Brochure</h4>
+                        <p>Interactive marketing brochure with page flip</p>
+                        <a href="https://ynnadr.github.io/onlinebrochure/" target="_blank" style="color:var(--primary);">Demo →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- VIBE CODING IN ACTION -->
     <section id="vibecoding">
@@ -137,7 +229,7 @@
                         <li>Rapid prototyping with AI-assisted development</li>
                         <li>Clean, modern, maintainable architecture</li>
                         <li>Faster delivery with zero quality compromise</li>
-                        <li>Always aligned with 2025+ best practices</li>
+                        <li>Always aligned with latest best practices</li>
                     </ul>
                 </div>
             </div>
@@ -164,16 +256,16 @@
                 nav_home: "Home", nav_skills: "Core Skills", nav_portfolio: "Portfolio", nav_vibe: "Vibe Coding in Action", nav_contact: "Hire Me",
                 hero_name: "Danny Ramadhan", hero_title: "Senior Full-Stack Web Developer", hero_desc: "I build complete, production-ready web applications — from interactive dashboards and payment systems to animated maps and creative marketing tools — all live and used by real users.",
                 badge1: "Remote Only", badge2: "Immediate Availability", badge3: "28+ Years Experience", hero_btn: "Hire Me",
-                vibe_title: "Vibe Coding in Action",
-                contact_title: "Available for Remote Work Immediately", contact_btn: "Hire Me",
+                skills_title: "What I Deliver (End-to-End)", portfolio_title: "Live Projects & Demos (All Built Solo)",
+                vibe_title: "Vibe Coding in Action", contact_title: "Available for Remote Work Immediately", contact_btn: "Hire Me",
                 footer: "© 2025 Danny Ramadhan – Senior Remote Full-Stack Developer"
             },
             id: {
                 nav_home: "Beranda", nav_skills: "Keahlian Utama", nav_portfolio: "Portofolio", nav_vibe: "Vibe Coding in Action", nav_contact: "Rekrut Saya",
                 hero_name: "Danny Ramadhan", hero_title: "Senior Full-Stack Web Developer", hero_desc: "Saya membangun aplikasi web lengkap siap produksi — dari dashboard interaktif dan sistem pembayaran hingga peta animasi dan tools marketing kreatif — semuanya sudah live dan digunakan user nyata.",
                 badge1: "Hanya Remote", badge2: "Siap Mulai Segera", badge3: "28+ Tahun Pengalaman", hero_btn: "Rekrut Saya",
-                vibe_title: "Vibe Coding in Action",
-                contact_title: "Siap Bekerja Remote Sekarang", contact_btn: "Rekrut Saya",
+                skills_title: "Yang Saya Berikan (End-to-End)", portfolio_title: "Proyek Live & Demo (Semua Dibuat Sendiri)",
+                vibe_title: "Vibe Coding in Action", contact_title: "Siap Bekerja Remote Sekarang", contact_btn: "Rekrut Saya",
                 footer: "© 2025 Danny Ramadhan – Senior Remote Full-Stack Developer"
             }
         };
