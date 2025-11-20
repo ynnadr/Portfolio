@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danny Ramadhan | Senior Remote Full-Stack Developer</title>
+    <meta name="description" content="28+ Years Full-Stack Developer • Immediate Remote Availability • End-to-End Web Applications • Vibe Coding Expert">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --dark: #111827;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --vibe: #c084fc;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Inter', sans-serif; line-height:1.7; color:#333; background:#fff; }
+        .container { max-width:1200px; margin:0 auto; padding:0 1.5rem; }
+
+        /* Mobile-first Nav */
+        nav {
+            position:fixed; top:0; left:0; right:0; z-index:1000;
+            background:white; box-shadow:0 4px 20px rgba(0,0,0,0.08);
+        }
+        .nav-content { display:flex; justify-content:space-between; align-items:center; padding:1rem 0; }
+        .logo { font-size:1.9rem; font-weight:800; color:var(--primary); }
+        .nav-links {
+            position:absolute; top:100%; left:0; right:0; background:white;
+            flex-direction:column; gap:0; box-shadow:0 10px 30px rgba(0,0,0,0.1);
+            max-height:0; overflow:hidden; transition:max-height 0.4s ease;
+        }
+        .nav-links.show { max-height:600px; padding:1rem 0; }
+        .nav-links a {
+            padding:1rem 1.5rem; font-weight:600; color:var(--dark); display:block; border-bottom:1px solid #eee;
+        }
+        .nav-links a:hover, .nav-links a.active { background:#f8faff; color:var(--primary); }
+        .lang-switch { display:flex; gap:0.5rem; background:#f3f4f6; padding:0.4rem 0.8rem; border-radius:50px; font-size:0.9rem; margin:1rem 1.5rem; }
+        .lang-btn.active { background:var(--primary); color:white; padding:0.3rem 0.8rem; border-radius:50px; }
+        .menu-toggle { font-size:1.9rem; cursor:pointer; color:var(--dark); }
+
+        #hero {
+            min-height:100vh; padding-top:90px;
+            background: linear-gradient(rgba(99,102,241,0.94), rgba(168,85,247,0.9)), url('images/hero.jpg') center/cover no-repeat;
+            color:white; display:flex; align-items:center; text-align:center;
+        }
+        .profile-img { width:170px; height:170px; border-radius:50%; border:8px solid white; margin-bottom:1.5rem; box-shadow:0 20px 50px rgba(0,0,0,0.4); }
+        .badge { display:inline-block; background:rgba(255,255,255,0.25); padding:0.7rem 1.6rem; border-radius:50px; margin:0.6rem; font-weight:600; backdrop-filter:blur(10px); }
+        .btn { display:inline-block; padding:1.1rem 3rem; background:white; color:var(--primary); border-radius:50px; font-weight:700; font-size:1.2rem; margin-top:2rem; box-shadow:0 15px 40px rgba(0,0,0,0.3); transition:0.3s; }
+        .btn:hover { transform:translateY(-6px); }
+
+        section { padding:6rem 0; }
+        h2 { font-size:2.4rem; text-align:center; margin-bottom:4rem; color:var(--dark); }
+        .grid { display:grid; gap:2rem; grid-template-columns:1fr; }
+        .card { background:white; padding:2.5rem; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.08); transition:0.3s; }
+        .card:hover { transform:translateY(-10px); }
+        .card h3 { color:var(--primary); font-size:1.5rem; margin-bottom:1rem; }
+        .highlight { background:var(--vibe); color:white; padding:0.3rem 0.8rem; border-radius:6px; font-size:0.9rem; font-weight:600; }
+        ul { padding-left:1.3rem; }
+        li { margin:1rem 0; }
+
+        #portfolio { background:#f8fafc; }
+        .portfolio-grid { display:grid; gap:2.5rem; grid-template-columns:1fr; }
+        .project-card { background:white; border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.1); }
+        .project-card img { width:100%; height:240px; object-fit:cover; }
+        .project-info { padding:1.6rem; }
+        .project-info h4 { font-size:1.35rem; margin-bottom:0.8rem; color:var(--primary); }
+
+        #contact { background:var(--dark); color:white; text-align:center; }
+        .contact-btn { background:white; color:var(--primary); padding:1.3rem 3.5rem; border-radius:50px; font-size:1.3rem; font-weight:700; }
+
+        footer { padding:2rem; text-align:center; background:var(--dark); color:#9ca3af; }
+
+        @media (min-width:768px) {
+            .grid { grid-template-columns:repeat(2,1fr); }
+            .portfolio-grid { grid-template-columns:repeat(3,1fr); }
+            .nav-links { position:static; display:flex; flex-direction:row; max-height:none; box-shadow:none; padding:0; }
+            .nav-links a { border:none; padding:0 1.2rem; }
+            .lang-switch { margin:0 1rem; }
+            .menu-toggle { display:none; }
+            h2 { font-size:2.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">DANNY RAMADHAN</div>
+            <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+            <div class="nav-links" id="navLinks">
+                <a href="#" class="nav-item active" data-section="hero" data-key="nav_home">Home</a>
+                <a href="#" class="nav-item" data-section="skills" data-key="nav_skills">Core Skills</a>
+                <a href="#" class="nav-item" data-section="portfolio" data-key="nav_portfolio">Portfolio</a>
+                <a href="#" class="nav-item" data-section="vibecoding" data-key="nav_vibe">Vibe Coding</a>
+                <a href="#" class="nav-item" data-section="contact" data-key="nav_contact">Hire Me</a>
+                <div class="lang-switch">
+                    <span class="lang-btn active" data-lang="en">EN</span>
+                    <span class="lang-btn" data-lang="id">ID</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="active">
+        <div class="container">
+            <img src="images/danny.jpg" alt="Danny Ramadhan" class="profile-img">
+            <h1 data-key="hero_name">Danny Ramadhan</h1>
+            <p style="font-size:1.7rem; margin:1rem 0;" data-key="hero_title">Senior Full-Stack Web Developer</p>
+            <div>
+                <span class="badge" data-key="badge1">Remote Only</span>
+                <span class="badge" data-key="badge2">Immediate Availability</span>
+                <span class="badge" data-key="badge3">28+ Years Experience</span>
+            </div>
+            <p style="max-width:900px; margin:2.5rem auto; font-size:1.25rem;" data-key="hero_desc">
+                I build complete, production-ready web applications from scratch — including admin dashboards, payment gateways, interactive maps, data visualization, and creative marketing tools — all deployed and used by real users.
+            </p>
+            <a href="#" class="btn" data-section="contact" data-key="hero_btn">Hire Me</a>
+        </div>
+    </section>
+
+    <!-- CORE SKILLS -->
+    <section id="skills">
+        <div class="container">
+            <h2 data-key="skills_title">What I Deliver (End-to-End)</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Full Application Development</h3>
+                    <ul>
+                        <li>PHP Native & Modern Architecture</li>
+                        <li>JavaScript, HTML5, CSS3</li>
+                        <li>Custom WordPress Theme & Plugin</li>
+                        <li>Complete Admin Dashboard (CRUD, User/Role, Monitoring)</li>
+                        <li>Payment Gateway: QRIS, Xendit (real transactions)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Advanced Front-End</h3>
+                    <ul>
+                        <li>Interactive Data Visualization (Chart.js)</li>
+                        <li>Leaflet.js Animated Maps & Routing</li>
+                        <li>3D Page Flip Brochures</li>
+                        <li>LocalStorage Full CRUD Apps</li>
+                        <li>Vibe Coding – Rapid, clean, AI-assisted</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO – 7 Bukti Nyata -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 data-key="portfolio_title">Live Projects & Demos (All Built Solo)</h2>
+            <div class="portfolio-grid">
+                <div class="project-card">
+                    <img src="images/tesola.jpg" alt="Tesola">
+                    <div class="project-info">
+                        <h4>tesola.id</h4>
+                        <p>Soft-skills certification + QRIS + full admin & PDF generation</p>
+                        <a href="https://tesola.id" target="_blank" style="color:var(--primary);">Live →</a>
+                    </div>
+                </div>
+                <div class="projectbug-card">
+                    <img src="images/bfswedding.jpg" alt="bfswedding">
+                    <div class="project-info">
+                        <h4>bfswedding.com</h4>
+                        <p>Wedding planner + Xendit + complete admin system</p>
+                        <a href="https://bfswedding.com" target="_blank" style="color:var(--primary);">Live →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/wresni.jpg" alt="wresni">
+                    <div class="project-info">
+                        <h4>wresni.id</h4>
+                        <p>Bali luxury real estate portal + full admin</p>
+                        <a href="https://wresni.id" target="_blank" style="color:var(--primary);">Live →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/penduduk.jpg" alt="Penduduk Dashboard">
+                    <div class="project-info">
+                        <h4>Population Analytics Dashboard</h4>
+                        <p>Interactive Indonesia population data + charts</p>
+                        <a href="https://ynnadr.github.io/penduduk/" target="_blank" style="color:var(--primary);">Demo →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/expenses.jpg" alt="Expenses Tracker">
+                    <div class="project-info">
+                        <h4>Personal Finance Tracker</h4>
+                        <p>Full offline expense app + charts + export</p>
+                        <a href="https://ynnadr.github.io/expenses/" target="_blank" style="color:var(--primary);">Demo →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/jalurlaut.jpg" alt="Jalur Laut Map">
+                    <div class="project-info">
+                        <h4>Animated Sea Route Map</h4>
+                        <p>Leaflet.js + animated polyline + timeline sync</p>
+                        <a href="https://ynnadr.github.io/jalurlaut/" target="_blank" style="color:var(--primary);">Demo →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/brochure.jpg" alt="3D Brochure">
+                    <div class="project-info">
+                        <h4>3D Flip Digital Brochure</h4>
+                        <p>Interactive marketing brochure with page flip</p>
+                        <a href="https://ynnadr.github.io/onlinebrochure/" target="_blank" style="color:var(--primary);">Demo →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIBE CODING -->
+    <section id="vibecoding">
+        <div class="container">
+            <h2 data-key="vibe_title">Vibe Coding Expert (2025 Workflow)</h2>
+            <div class="grid">
+                <div class="card">
+                    <ul>
+                        <li>Tesola.id built 100% with Vibe Coding</li>
+                        <li>Rapid prototyping + AI-assisted development</li>
+                        <li>Clean, maintainable, modern architecture</li>
+                        <li>Faster delivery without quality compromise</li>
+                        <li>Always up-to-date with latest best practices</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT – WhatsApp Only -->
+    <section id="contact">
+        <div class="container">
+            <h2 data-key="contact_title">Available for Remote Work Immediately</h2>
+            <p style="font-size:1.8rem; margin:2rem 0;">
+                <i class="fab fa-whatsapp" style="color:#25d366;"></i> +62 821-1313-1149 (WhatsApp)<br><br>
+                <a href="https://wa.me/6282113131149?text=Hi%20Danny%2C%20I%27m%20interested%20in%20hiring%20you%20for%20a%20remote%20web%20development%20role." 
+                   target="_blank" class="contact-btn" data-key="contact_btn">Hire Me</a>
+            </p>
+        </div>
+    </section>
+
+    <footer data-key="footer">© 2025 Danny Ramadhan – Senior Remote Full-Stack Developer</footer>
+
+    <script>
+        const translations = {
+            en: {
+                nav_home: "Home", nav_skills: "Core Skills", nav_portfolio: "Portfolio", nav_vibe: "Vibe Coding", nav_contact: "Hire Me",
+                hero_name: "Danny Ramadhan", hero_title: "Senior Full-Stack Web Developer", hero_desc: "I deliver complete, production-ready web applications — including admin dashboards, payment gateways, interactive maps, data visualization, and creative marketing tools — all deployed and used by real users.",
+                badge1: "Remote Only", badge2: "Immediate Availability", badge3: "28+ Years Experience", hero_btn: "Hire Me",
+                skills_title: "What I Deliver (End-to-End)", portfolio_title: "Live Projects & Demos (All Built Solo)",
+                vibe_title: "Vibe Coding Expert (2025 Workflow)", contact_title: "Available for Remote Work Immediately", contact_btn: "Hire Me",
+                footer: "© 2025 Danny Ramadhan – Senior Remote Full-Stack Developer"
+            },
+            id: {
+                nav_home: "Beranda", nav_skills: "Keahlian Utama", nav_portfolio: "Portofolio", nav_vibe: "Vibe Coding", nav_contact: "Rekrut Saya",
+                hero_name: "Danny Ramadhan", hero_title: "Senior Full-Stack Web Developer", hero_desc: "Saya membangun aplikasi web lengkap siap produksi — termasuk dashboard admin, payment gateway, peta interaktif, visualisasi data, dan tools marketing kreatif — semuanya sudah live dan digunakan user nyata.",
+                badge1: "Hanya Remote", badge2: "Siap Mulai Segera", badge3: "28+ Tahun Pengalaman", hero_btn: "Rekrut Saya",
+                skills_title: "Yang Saya Berikan (End-to-End)", portfolio_title: "Proyek Live & Demo (Semua Dibuat Sendiri)",
+                vibe_title: "Ahli Vibe Coding (Workflow 2025)", contact_title: "Siap Bekerja Remote Sekarang", contact_btn: "Rekrut Saya",
+                footer: "© 2025 Danny Ramadhan – Senior Remote Full-Stack Developer"
+            }
+        };
+
+        document.querySelectorAll('[data-section]').forEach(el => {
+            el.addEventListener('click', e => {
+                e.preventDefault();
+                const targetId = el.getAttribute('data-section');
+                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                document.querySelector(`.nav-item[data-section="${targetId}"]`)?.classList.add('active');
+                document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+                document.getElementById(targetId).classList.add('active');
+                window.scrollTo({ top: document.getElementById(targetId).offsetTop - 80, behavior: 'smooth' });
+                document.getElementById('navLinks').classList.remove('show');
+            });
+        });
+
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('show');
+        });
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.dataset.lang;
+                document.documentElement.lang = lang;
+                document.querySelectorAll('[data-key]').forEach(el => {
+                    const key = el.dataset.key;
+                    if (translations[lang][key]) el.innerHTML = translations[lang][key];
+                });
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
